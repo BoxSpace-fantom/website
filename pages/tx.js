@@ -44,7 +44,7 @@ export default function Tx() {
           let txType;
           let amount;
           let boxId;
-          const link = `https://explorer.testnet.fantom.network/tx/${tx.tx_hash}`;
+          const link = `https://explorer.fantom.network/tx/${tx.tx_hash}`;
           const date = new Date(tx.block_signed_at);
           const options = {
             year: "numeric",

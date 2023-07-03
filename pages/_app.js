@@ -10,7 +10,7 @@ import {
   polygon,
   polygonMumbai,
   sepolia,
-  fantomTestnet
+  fantom
 } from "@wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
@@ -18,7 +18,7 @@ import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 
 export default function App({ Component, pageProps }) {
   const { chains, provider, webSocketProvider } = configureChains(
-    [fantomTestnet],
+    [fantom],
     [
       alchemyProvider({ apiKey: "ci-UCdnjUtCTp8oLAj9X4iyD1dTR90vp" }),
       publicProvider(),

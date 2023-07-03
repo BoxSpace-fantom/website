@@ -261,7 +261,7 @@ export default function BoxSwap() {
     if (buyBoxId != sellBoxId) {
       try {
         const tx = await contract.swapTokens(sellBoxId, buyBoxId);
-        const etherscanLink = `https://polygonscan.com/tx/${tx.hash}`;
+        const etherscanLink = `https://explorer.fantom.network/tx/${tx.hash}`;
         setModal(
           <TransactionInProcess
             etherscanTxLink={etherscanLink}

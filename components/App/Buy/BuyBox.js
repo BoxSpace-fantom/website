@@ -42,7 +42,7 @@ const BuyBox = ({ box }) => {
         const tx = await contract.buy(box.boxId, {
           value: txValue,
         });
-        const etherscanLink = `https://polygonscan.com/tx/${tx.hash}`;
+        const etherscanLink = `https://explorer.fantom.network/tx/${tx.hash}`;
         navigationHandler();
         setModal(
           <TransactionInProcess

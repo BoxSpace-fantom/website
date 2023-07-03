@@ -43,7 +43,7 @@ const TransactionInProcess = ({ etherscanTxLink, backHandler }) => {
             rel="noreferrer"
           >
             <button className={styles.etherscanButton}>
-              View on Fantomscan
+              View on Fantom Scan
             </button>
           </a>
         </div>
