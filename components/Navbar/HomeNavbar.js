@@ -12,21 +12,6 @@ const HomeNavbar = () => {
       <ul className={styles.navlist}>
         <li className={styles.navlistitem}></li>
         <li className={styles.navlistitem}>
-          <a
-            className={styles.navText}
-            href={DOCS_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-        </li>
-        <li className={styles.navlistitem}>
-          <Link className={styles.navText} href="/team">
-            Team
-          </Link>
-        </li>
-        <li className={styles.navlistitem}>
           <AppButton text="Launch App" />
         </li>
       </ul>
