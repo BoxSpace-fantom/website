@@ -26,7 +26,7 @@ const SingleTxBox = (props) => {
           target="_blank"
           rel="noreferrer"
         >
-          <button className={styles.txButton}>View in Polygonscan</button>
+          <button className={styles.txButton}>View in FantomScan</button>
         </a>
       </div>
     </div>

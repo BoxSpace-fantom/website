@@ -41,9 +41,9 @@ const Web3Button = () => {
   } = useConnect();
   const { address, isConnected, isDisconnected, isConnecting } = useAccount();
 
-  const { data: ensName } = useEnsName({
+  /* const { data: ensName } = useEnsName({
     address: address,
-  });
+  }); */
 
   const copyAddressHandler = () => {
     navigator.clipboard.writeText(address);
@@ -92,9 +92,9 @@ const Web3Button = () => {
     let displayAddress =
       address.substring(0, 6) + "...." + address.substring(address.length - 4);
 
-    if (ensName) {
+    /*if (ensName) {
       displayAddress = ensName;
-    }
+    } */
 
     return (
       <div className={styles.disconnectArea}>

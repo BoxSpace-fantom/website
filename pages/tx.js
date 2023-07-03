@@ -17,7 +17,7 @@ export default function Tx() {
   useEffect(() => {
     axios
       .get(
-        `https://api.covalenthq.com/v1/${NETWORK_ID}/address/${ADDRESS}/transactions_v2/?quote-currency=USD&format=JSON&block-signed-at-asc=false&no-logs=false&key=ckey_1efdb7be794449c9bb3a7c688b3`
+        `https://api.covalenthq.com/v1/${NETWORK_ID}/address/${ADDRESS}/transactions_v2/?quote-currency=USD&format=JSON&block-signed-at-asc=false&no-logs=false&key=cqt_rQpbyhYW7xmCXFGWdYJJyvbXfRvq`
       )
       .then((response) => {
         setTxData(response.data);
@@ -44,7 +44,7 @@ export default function Tx() {
           let txType;
           let amount;
           let boxId;
-          const link = `https://polygonscan.com/tx/${tx.tx_hash}`;
+          const link = `https://explorer.testnet.fantom.network/tx/${tx.tx_hash}`;
           const date = new Date(tx.block_signed_at);
           const options = {
             year: "numeric",

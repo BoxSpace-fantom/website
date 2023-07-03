@@ -84,7 +84,7 @@ const BuyBox = ({ box }) => {
       const tvlTemp = await contract.getBoxTVL(box.boxId);
       const price = priceTemp / 10 ** 18;
       const tvl = tvlTemp / 10 ** 18;
-      await setPrice("$" + price.toFixed(2).toString());
+       await setPrice("$" + price.toFixed(2).toString());
       await setTvl("$" + tvl.toFixed(2).toString());
       await setTvlText("TVL");
     } catch (e) {
@@ -201,7 +201,7 @@ const BuyBox = ({ box }) => {
                   <PriceInfo title="Buy Price:" value={price} />
                   <PriceInfo2 title="Box Token Balance:" value={balance} />
                 </div>
-                <p className={styles.enterAmounttext}>Enter Amount in MATIC:</p>
+                <p className={styles.enterAmounttext}>Enter Amount in FTM:</p>
                 <div className={styles.sellButtonLine}>
                   <input
                     className={styles.inputBox}
@@ -229,3 +229,4 @@ const BuyBox = ({ box }) => {
 };
 
 export default BuyBox;
+
