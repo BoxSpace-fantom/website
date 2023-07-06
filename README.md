@@ -171,7 +171,7 @@ Parameters:
 | Name | Type | Description |
 |----------|----------|----------|
 | boxId | uint| ID of the box |
-| amountInETH | uint| Buying amount of the user |
+| amountInFTM | uint| Buying amount of the user |
 
 Returns:
 | Type | Description |
