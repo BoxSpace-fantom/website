@@ -10,7 +10,7 @@ The contract `BoxProtocol.sol` imports contract `PriceFeed.sol` to fetch prices 
 ## Variables
 
 - `ISwapRouter` : A public, immutable contract reference to the ISwapRouter contract. Used to call the swapTokens function to swap tokens.
-- `WETHinterface` : A contract reference to the WFTMinterface contract. Used to call the deposit and withdraw functions on the WFTM contract.
+- `WFTMinterface` : A contract reference to the WFTMinterface contract. Used to call the deposit and withdraw functions on the WFTM contract.
 - `boxNumber` : An uint256 that stores the number of boxes created.
 
 ## Mappings
