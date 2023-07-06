@@ -1,16 +1,16 @@
-# Box Protocol Smart Contract
+# Box Protocol website
 
 ## Introduction
 
-This is a smart contract for [Box Protocol](https://boxprotocol.netlify.app/) - a platform for buying and selling tokenized crypto portfolios. It is an easy, self custodial way to invest in boxes representing the hottest ideas and sectors in Web3!.
-The contract is currently deployed on [Goerli Testnet](https://goerli.etherscan.io/address/0x77Fdb12CFe181327Bb46d03b41F8F7599D484228#code)
+Box protocol is a platform for buying and selling tokenized crypto portfolios. It is an easy, self custodial way to invest in boxes representing the hottest ideas and sectors in Web3!.
+The contract is currently deployed on Fantom Mainnet
 
 The contract `BoxProtocol.sol` imports contract `PriceFeed.sol` to fetch prices from Chainlink data feeds.
 
 ## Variables
 
 - `ISwapRouter` : A public, immutable contract reference to the ISwapRouter contract. Used to call the swapTokens function to swap tokens.
-- `WETHinterface` : A contract reference to the WETHinterface contract. Used to call the deposit and withdraw functions on the WETH contract.
+- `WETHinterface` : A contract reference to the WFTMinterface contract. Used to call the deposit and withdraw functions on the WFTM contract.
 - `boxNumber` : An uint256 that stores the number of boxes created.
 
 ## Mappings
@@ -38,7 +38,7 @@ The contract `BoxProtocol.sol` imports contract `PriceFeed.sol` to fetch prices 
 
     buy(uint boxId) external payable returns(boxTokenMinted boxTokenMinted)
 
-This function allows a user to buy a box by depositing funds. The deposited funds will be used to buy the specified tokens in the specified percentages and an equivalent number of box tokens will be minted to the user's account. If the underlying token is ETH, it will simply be stored in the boxBalance mapping. If the underlying token is WETH, the equivalent ETH will be deposited into the WETHinterface contract. For other tokens, the funds will first be converted to WETH and then swapped using Uniswap's ISwapRouter contract for the required token.
+This function allows a user to buy a box by depositing funds. The deposited funds will be used to buy the specified tokens in the specified percentages and an equivalent number of box tokens will be minted to the user's account. If the underlying token is FTM, it will simply be stored in the boxBalance mapping. If the underlying token is WFTM, the equivalent FTM will be deposited into the WFTMinterface contract. For other tokens, the funds will first be converted to WFTM and then swapped using Uniswap's ISwapRouter contract for the required token.
 
 Parameters:
 | Name | Type | Description |
@@ -56,7 +56,7 @@ Returns:
 
     sell(uint boxId, uint256 tokenSellAmount) external
 
-The sell function allows a user to sell a specific amount of tokens belonging to the specified box ID. The function first calculates the sell ratio and then loop over all the tokens in the box to calculate the selling amount. If the token is not ETH, the tokens are swapped to ETH using Uniswap and then the total ETH is trasnfered to the user.
+The sell function allows a user to sell a specific amount of tokens belonging to the specified box ID. The function first calculates the sell ratio and then loop over all the tokens in the box to calculate the selling amount. If the token is not FTM, the tokens are swapped to FTM using Uniswap and then the total FTM is trasnfered to the user.
 
 Parameters:
 | Name | Type | Description |
@@ -163,7 +163,7 @@ Returns:
 
 ### \_getBoxTokenMintAmount
 
-    _getBoxTokenMintAmount(uint boxId, uint amountInETH) internal view returns(uint)
+    _getBoxTokenMintAmount(uint boxId, uint amountInFTM) internal view returns(uint)
 
 The function calculated the amount of box token(ERC 1155) to be minted to the user according to the buying amount.
 
